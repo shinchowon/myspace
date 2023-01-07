@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myspacecw.repository.dao.BoardDAO">
+
+<resultMap id="contentClob" type="HashMap">
+<result column="no" property="no"/>
+<result column="title" property="title"/>
+<result column="writer" property="writer"/>
+<result column="content" property="content" typeHandler="org.apache.ibatis.type.ClobTypeHandler" jdbcType="CLOB" javaType="java.lang.String"/>
+<result column="reg_date" property="regDate"/>
+<result column="view_cnt" property="viewCnt"/>
+<result column="board_re_pnum" property="boardRePnum"/>
+<result column="board_re_onum" property="boardReOnum"/>
+<result column="board_re_depth" property="boardReDepth"/>
+</resultMap>
+<!-- CLOB 타입을 String 형태로 넘겨주기 위해 resultMap 사용 -->
+
+	<!-- 
+	<select id = "selectBoard" parameterType="com.myspacecw.repository.vo.Page" resultMap="contentClob">	
+		select *
+			from (select rownum rnum, a.* 
+				from (select *
+					from tb_board
+					order by board_re_pnum desc, board_re_onum asc, board_re_depth asc, no desc ) a)
+		where rnum between #{begin} and #{end}
+	</select>
+
+	<select id = "selectBoard" parameterType="HashMap" resultMap="contentClob">
+		select *
+			from tb_board
+			where no = no
+			order by board_re_pnum desc, board_re_onum asc
+	</select>		
+	<select id = "selectBoard" resultType="Board">
+		select *
+			from tb_board
+			order by board_re_pnum desc, board_re_onum asc
+	</select>
+	 -->
+	 <!-- 
+	<select id = "selectBoardCount" resultType="Int" parameterType="String">
+		select count(*)
+			from tb_board
+	</select>
+
+	<select id="selectOneBoard" parameterType="int" resultType="com.myspacecw.repository.vo.Board">
+		select *
+		from tb_board
+		where no = #{no}
+	</select>
+	
+		<update id="updateViewCnt" parameterType="int">
+		update tb_board
+		set view_cnt = view_cnt + 1
+		where no = #{no}
+	</update>
+	
+	<update id="updateBoard" parameterType="com.myspacecw.repository.vo.Board">
+		update tb_board
+		set title = #{title},
+		writer = #{writer},
+		content = #{content}
+		where no = #{no}
+	</update>
+
+	
+	<insert id="insertBoard" parameterType="Board">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select board_seq.nextval as no from dual
+		</selectKey>
+		insert into tb_board (
+		no, writer, title, content, reg_date, view_cnt, board_re_pnum, board_re_onum, board_re_depth
+		) values (
+		#{no}, #{writer}, #{title}, #{content:CLOB}, sysdate, 0, #{no}, 0, 0
+		)
+	</insert>
+
+	<insert id="commentaire" parameterType="Board">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select board_seq.nextval as no from dual
+		</selectKey>
+		insert into tb_board (
+		no, writer, title, content, reg_date, view_cnt, board_re_pnum, board_re_onum, board_re_depth
+		) values (
+		#{no}, #{writer}, #{title}, #{content:CLOB}, sysdate, 0, #{boardRePnum}, reply_seq.nextval, #{boardReDepth}+1
+		)
+	</insert>
+
+	
+	<insert id="commentaire2" parameterType="Board">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select board_seq.nextval as no from dual
+		</selectKey>
+		insert into tb_board (
+		no, writer, title, content, reg_date, view_cnt, board_re_pnum, board_re_onum, board_re_depth
+		) values (
+		#{no}, #{writer}, #{title}, #{content:CLOB}, sysdate, 0, #{boardRePnum}, #{boardReOnum}, #{boardReDepth}+1
+		)
+	</insert>
+	
+	<update id="commentaireUp" parameterType="Board">
+		update tb_board
+		set board_re_onum = reply_seq.nextval + 1 
+		where no = #{no} and board_re_onum > reply_seq.nextval
+	</update>	
+
+	<delete id="deleteBoard" parameterType="int">
+		delete
+		from tb_board
+		where no = #{no}
+	</delete>
+	
+	
+	<select id="selectComment" parameterType="int" resultType ="com.myspacecw.repository.vo.Comment">
+	    select *
+	      from tb_comment
+	     where no = #{no}
+	     order by comment_no 
+	</select>
+	
+	<insert id="insertComment" parameterType="com.myspacecw.repository.vo.Comment" >
+		insert into tb_comment(
+			comment_no, no, writer, content, reg_date
+		) values (
+			comment_seq.nextval, #{no}, #{writer,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, sysdate
+		)
+	</insert>
+	
+	<update id="updateComment" parameterType="com.myspacecw.repository.vo.Comment">
+		update tb_comment
+		set content = #{content}
+		where comment_no = #{commentNo}
+	</update>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete
+		from tb_comment
+		where comment_no = #{commentNo}
+	</delete>
+	
+	
+	<select id="selectSearchWriter" resultType="Board"
+		parameterType="Search">
+		select *
+			from tb_board
+				where writer like '%'||#{searchText}||'%'
+					order by board_re_pnum desc, board_re_onum asc
+	</select>
+	<select id="selectSearchTitle" resultType="Board"
+		parameterType="Search">
+		select *
+		from tb_board
+		where title like '%'||#{searchText}||'%'
+	</select>
+	<select id="selectSearchBoth" resultType="Board"
+		parameterType="Search">
+		select *
+		from tb_board
+		where (title like '%'||#{searchText}||'%') OR (writer like'%'||#{searchText}||'%')
+			order by no desc
+	</select>
+	
+
+	<select id="searchComment" resultType="Comment" parameterType="Search">
+		select *
+			from tb_comment
+			where writer like '%'||#{searchText}||'%'
+			order by  comment_no desc
+	</select>
+
+
+	<insert id="insertFile" parameterType="hashMap">
+		insert into tb_file(file_no, no, ori_name, name, path, type, file_size)
+		values(file_seq.nextval, #{no}, #{oriName}, #{name}, #{path}, #{type}, #{fileSize})
+	</insert>
+	
+	<select id="selectFileList" parameterType="int" resultType="hashMap">
+	select file_no, ori_name, name, type, path, round(file_size/1024,1) as file_size
+		from tb_file
+		where no = #{no}
+	</select>
+	
+	<select id="selectFileInfo" parameterType="hashMap" resultType="hashMap">
+		select name, ori_name
+		from tb_file
+		where file_no = #{file_no}			
+	</select>
+	
+	
+	<select id = "selectLogin" parameterType="User" resultType ="User">
+		select * 
+			from tb_user
+			where id = #{id}
+			and pass = #{pass} 
+	</select>
+	 -->
+	 
+</mapper>
+
+
+
+
+
+
+
