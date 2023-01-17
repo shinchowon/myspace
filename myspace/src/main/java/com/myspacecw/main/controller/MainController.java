@@ -10,11 +10,16 @@ import com.myspacecw.repository.vo.User;
 
 @Controller("com.myspacecw.main.controller.MainController")
 public class MainController {
-	
 	@RequestMapping("/main.do")
 	public void Main() {	
 		System.out.println("////////////////////////////////");
 		System.out.println("///???????");
+		System.out.println("////////////////////////////////");
+	}
+	@RequestMapping("/profile.do")
+	public void Profile() {	
+		System.out.println("////////////////////////////////");
+		System.out.println("///profile");
 		System.out.println("////////////////////////////////");
 	}
 }

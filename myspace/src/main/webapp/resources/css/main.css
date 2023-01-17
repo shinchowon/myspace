@@ -1,47 +1,47 @@
 @charset "UTF-8";
 
 body {background-color:#000;}
-.center-outer {display: table; width: 100%; height: 100%;}
-.center-outer .bubbleBox {width:100%; font-family: arial; display: table-cell; vertical-align: middle; text-align: center;} 
-.center-outer .bubbleBox .intInter {width:50%; float: left; display: inline-block;} 
-.center-outer .bubbleBox .intInter .center-inner { width: 45%; display: inline-block; word-wrap: break-word;}
-.center-outer .bubbleBox .intInter .center-inner .bubbles {width: 100%; position: relative;}
-.center-outer .bubbleBox .intInter .center-inner .bubbles h1 > a { position: relative; margin: 1em 0 0; font-family: 'arial';  font-size:45px; color: #fff; z-index: 2;}
-.center-outer .bubbleBox .intInter .center-inner .bubbles .individual-bubble { position: absolute; border-radius: 100%; bottom: 10px; background-color: #fff; z-index: 1; }
-.center-outer .bubbleBox .intInter .center-inner .bubbles .inter {width: 50%; border: 2px solid #fff; margin: 15px auto 0;}
-.center-outer .bubbleBox .intInter .center-inner .bubbles .inter > a {color: #fff; padding: 10px 0px; display: block;}
 
-body.loginBody {
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+/**************************PROFILE*****************************/
+.gateContainer { background: #141414; bottom: 0; left: 0; position: fixed; right: 0;  text-align: center; top: 0; z-index: 0;}
+    .gateContainer .centeredDiv { align-items: center; bottom: 0; display: flex; flex-direction: column; justify-content: center; left: 0; position: absolute; right: 0; top: 0; z-index: 100;}
+    .gateContainer .listProfiles { max-width: 80%;}
+    .gateContainer .chooseProfile { margin: 2em 0;}
+    .gateContainer ul { padding: 0;}
+    .gateContainer li.profile { max-width: 200px; min-width: 84px; width: 10vw;}
+    .gateContainer li { display: inline-block; position: relative; vertical-align: top;}
+    .gateContainer li.profile:not(:last-child) {margin: 0 2vw 0 0;}
+    .gateContainer .avatarWapper { position: relative;}
+    .gateContainer .profileName { color: gray;  display: block; font-size: 1.3vw; line-height: 1.2em;  margin: 0.6em 0; min-height: 1.8em;  overflow: hidden;  text-align: center; text-overflow: ellipsis;}
+    .gateContainer .profileIcon {  background-color: #333;  background-repeat: no-repeat;  background-size: cover;  border: none;  border-radius: 4px;  box-sizing: border-box;  height: 10vw;  max-height: 200px;  max-width: 200px;  min-height: 84px;  min-width: 84px;  position: relative;  text-decoration: none;  width: 10vw;}
+    .gateContainer .profileIcon:after {  border: 0.3em solid transparent; border-radius: 4px; bottom: 0; content: ""; display: block; left: 0; position: absolute; right: 0; top: 0;}
+
+
+.profile.profileSel{
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+    animation: flicker 2s ease-in-out infinite alternate
+}
+.profile.profileSel .profileName {color: #fff; text-shadow: 0 0 21px rgba(223, 15, 15, 0.9)}
+
+@keyframes flicker{
+    0%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    5%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    5.5% {transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    6%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    6.5%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    7%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    8%{transform: translate(-0.2rem, 1rem) rotate(10deg)}
+    50%{transform: translate(-0.2rem, 1rem) rotate(13deg)}
+    100%{transform: translate(-0.2rem, 1rem) rotate(10deg)}
+}
+
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+.titleText { color: #cce7f8; font-size: 4.5rem; font-family: "Pacifico", cursive; text-transform: uppercase; height: 145px; animation: shining 0.1s alternate infinite; transform: rotateX(45deg);}
+@keyframes shining {
+  from {text-shadow: 0 0 6px rgba(211, 196, 182, 0.9), 0 0 30px rgba(211, 196, 182, 0.3), 0 0 12px rgba(223, 15, 15, 0.5), 0 0 21px rgba(223, 15, 15, 0.9), 0 0 34px rgba(223, 15, 15, 0.8), 0 0 54px rgba(223, 15, 15, 0.9);}
+  to {text-shadow: 0 0 6px #d3bfb6, 0 0 30px rgba(211, 196, 182, 0.4), 0 0 12px rgba(223, 15, 15, 0.6), 0 0 22px rgba(223, 15, 15, 0.8), 0 0 38px rgba(223, 15, 15, 0.9), 0 0 60px #df0f0f;}
 }
 
 
-@media all and (max-width: 750px){
-    .center-outer .bubbleBox .intInter { width: 100%;  display: block;}
-    .center-outer .bubbleBox .intInter:nth-child(1) {margin-bottom: 180px;}
-    .center-outer .bubbleBox .intInter .center-inner {width: 100%; }
-}
 
-
-.login-box { position: absolute;  top: 50%;  left: 50%;  width: 400px;  padding: 40px;  transform: translate(-50%, -50%);  background: rgba(0,0,0,.5);  box-sizing: border-box;  box-shadow: 0 15px 25px rgba(0,0,0,.6);  border-radius: 10px;}
-.login-box h2 {  margin: 0 0 30px;  padding: 0;  color: #fff;text-align: center;}
-.login-box .user-box { position: relative;}
-.login-box .user-box input {  width: 100%;  padding: 10px 0;  font-size: 16px;  color: #fff;  margin-bottom: 30px;  border: none;  border-bottom: 1px solid #fff;outline: none;  background: transparent;}
-.login-box .user-box label { position: absolute;  top:0;  left: 0;  padding: 10px 0;  font-size: 16px;  color: #fff;  pointer-events: none;transition: .5s;}
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {  top: -20px;  left: 0;  color: #7daee7;  font-size: 12px;}
-.login-box form a {  position: relative;  display: inline-block;  padding: 10px 20px;  color: #7daee7;  font-size: 16px;  text-decoration: none;  text-transform: uppercase;  overflow: hidden;  transition: .5s;  margin-top: 40px;  letter-spacing: 4px}
-.login-box a:hover { background: #7daee7;color: #fff;  border-radius: 5px;  box-shadow: 0 0 5px #7daee7,0 0 25px #7daee7,0 0 50px #7daee7, 0 0 100px #7daee7;}
-.login-box a.submit span {  position: absolute;  display: block;}
-.login-box a.submit span:nth-child(1) { top: 0;  left: -100%;  width: 100%;  height: 2px;  background: linear-gradient(90deg, transparent, #7daee7); animation: btn-anim1 2s linear infinite;}
-@keyframes btn-anim1 { 0% {left: -100%;}  50%,100% {left: 100%;}}
-.login-box a.submit span:nth-child(2) {  top: -100%;  right: 0;  width: 2px;  height: 100%;  background: linear-gradient(180deg, transparent, #7daee7);animation: btn-anim2 2s linear infinite;  animation-delay: .55s}
-@keyframes btn-anim2 { 0% {top: -100%;}  50%,100% {top: 100%;}}
-.login-box a.submit span:nth-child(3) { bottom: 0;  right: -100%;  width: 100%;  height: 2px;  background: linear-gradient(270deg, transparent, #7daee7);animation: btn-anim3 2s linear infinite;  animation-delay: 1s}
-@keyframes btn-anim3 { 0% {right: -100%;}  50%,100% {right: 100%;}}
-.login-box a.submit span:nth-child(4) { bottom: -100%;  left: 0;  width: 2px;  height: 100%;  background: linear-gradient(360deg, transparent, #7daee7);animation: btn-anim4 2s linear infinite;  animation-delay: 1.5s}
-@keyframes btn-anim4 {  0% {bottom: -100%;}  50%,100% {bottom: 100%;}}
 

@@ -7,13 +7,10 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
 <meta name="google" value="notranslate"/>
-<title>JAVA MAIN</title>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/base.css"/>"/>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/common.css"/>"/>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.12.4.min.js" />"></script>
-<script src="<c:url value="/resources/js/common.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/resources/js/main.js"/>" type="text/javascript"></script>
+<title>Login</title>
+<%@ include file="/WEB-INF/jsp/include/includecss.jsp"%>
+<%@ include file="/WEB-INF/jsp/include/includejs.jsp"%>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/login.css"/>"/>
 </head>
 <body class="loginBody">
     <div class="login-box">
@@ -67,9 +64,6 @@
         		});    	
             }
         });
-        
-        
-        
     </script>
 </body>
 </html>

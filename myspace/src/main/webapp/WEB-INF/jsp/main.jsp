@@ -7,7 +7,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
 <meta name="google" value="notranslate"/>
-<title>JAVA MAIN</title>
+<title>Intro</title>
 </head>
 <style>
 /*
@@ -1198,7 +1198,7 @@ body {
 </div>
 <script>
 setTimeout(function () {
-	  location.href="login/loginform.do";
+	location.href="/myspacecw/profile.do";
 	}, 4000);
 </script>
 </body>
