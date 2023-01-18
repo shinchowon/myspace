@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
 .fnc {}
-.fnc-slider {
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
-  height: 100vh;
-}
+.fnc-slider { overflow: hidden;  box-sizing: border-box;  position: relative; height: 100vh;}
 .fnc-slider *, .fnc-slider *:before, .fnc-slider *:after {
   box-sizing: border-box;
 }
