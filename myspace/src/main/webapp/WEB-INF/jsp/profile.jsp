@@ -20,7 +20,7 @@
             <div class="titleText">CWEND PORTFOLIO </div>
             <ul class="chooseProfile">
                 <li class="profile">
-                	<a class="profileLink" href="">
+                	<a class="profileLink" href="<c:url value='port/portMain.do'/>">
                     	<div class="avatarWapper">
                         	<div class="profileIcon"style="background-image:url(<c:url value="/resources/img/profile/profile1.png" />)">
                             </div>
