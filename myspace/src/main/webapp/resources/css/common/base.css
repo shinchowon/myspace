@@ -27,7 +27,9 @@ section {width: 100%;}
 
 .blind, .sound_only {visibility:hidden;width:0;height:0;font-size:0;line-height:0;overflow:hidden;}
 .img_100 {width:100%; height:auto !important; vertical-align:top;}
-
+img {width: 100%; display: inline-block; text-align: center;}
+.con { max-width:1440px;}
+.con-min-width { min-width:320px;}
 .underline {text-decoration:underline; }
 .tl { text-align:left;}
 .tc { text-align:center;}

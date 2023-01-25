@@ -11,6 +11,11 @@
 <%@ include file="/WEB-INF/jsp/include/includecss.jsp"%>
 <%@ include file="/WEB-INF/jsp/include/includejs.jsp"%>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/portpolio/port.css"/>"/>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/portpolio/slick.css"/>"/>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/portpolio/slick-theme.css"/>"/>
+<script src="<c:url value="/resources/js/portpolio/slick.js" />"></script>
+<script src="<c:url value="/resources/js/portpolio/slick.min.js" />"></script>
+<script src="<c:url value="/resources/js/portpolio/lettering.min.js" />"></script>
 <script src="<c:url value="/resources/js/portpolio/port.js" />"></script>
 </head>
 </body>
@@ -78,6 +83,75 @@
     </div>
     <!-- slider end -->
   </div>
+  <section class="sec secSlide">
+    <div class="slideLfBox">
+    	<span class="sec2Tit">project</span>
+    	<span class="sec2Tit2">list</span>
+    </div>
+    <div class="slideBox" data-aos="fade-up">
+        <div class="slider-item">
+          <div class="slideDim"></div>
+          <div class="prjNum">01</div>  
+          <div class="img-box">
+            <img src="https://source.unsplash.com/random/690x386" alt="690x386">
+          </div>
+          <div class="prjBox">
+            <div class="prjDate">2022.01.11 ~ 2023.01.22</div>
+            <div class="prjTit">projectName</div>
+              <a href="" target="_blank">
+                  <div class="prjView">More View</div>
+              </a>
+          </div>
+        </div>
+        <div class="slider-item">  
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="https://source.unsplash.com/random/690x386" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="https://source.unsplash.com/random/690x386" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="https://source.unsplash.com/random/690x386" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="https://source.unsplash.com/random/690x386" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="https://source.unsplash.com/random/690x386" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+  </section>
+  <section class="sec secContact">
+	  <div class="maileBox">
+	   <form>
+	   		<div>
+	   		<div><span class="textColor">email</span><input type="text" /></div>
+	   		<div><span>name</span><input type="text" /></div>
+	   		<div><span>d</span><textarea></textarea></div>
+	   		
+	   		</div>
+	   </form>
+	  </div>
+  </section>
 </body>
 </html>
 

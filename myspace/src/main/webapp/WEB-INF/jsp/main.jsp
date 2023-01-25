@@ -1199,7 +1199,7 @@ body {
 <script>
 setTimeout(function () {
 	location.href="/myspacecw/profile.do";
-	}, 4000);
+	}, 3500);
 </script>
 </body>
 </html>

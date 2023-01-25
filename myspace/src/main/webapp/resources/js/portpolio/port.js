@@ -168,4 +168,36 @@ $(document).ready(function($){
 	  $demoCont.classList.toggle("credits-active");
 	});
 	});
+	
+	// portpolio List letter 
+	$(".sec2Tit").lettering('words').children("span").lettering();
+    $(".sec2Tit2").lettering('words').children("span").lettering();
+    
+    // portpolio slick slider 
+	$('.slideBox').slick({
+	    draggable:true,
+	    arrows:false,
+	    adaptiveHeight:true,
+	    slidesToShow: 3,
+	    centerMode:false,
+	    infinite : true,
+	    centerPadding:'300px',
+	    responsive: [
+	        {
+	          breakpoint: 1440,
+	          settings: {
+	            centerPadding:'20vw',
+	          }
+	        },
+	        {
+	          breakpoint: 770,
+	          settings: {
+	            centerPadding:'0',
+	            arrows:false,
+	          }
+	        },
+	    ],
+	});
+	
+	
 });
