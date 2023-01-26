@@ -50,7 +50,7 @@
         	    	success:function(result) {
         				console.log(result);
         	    		if (result == "f") {
-        					alert("EMAIL또는 PASS를 확인해주세요.");
+        	    			alertMsg("alert","EMAIL또는 PASS를 확인해주세요.");
         				 }
         				else {
         					alert("로그인되었습니다.");

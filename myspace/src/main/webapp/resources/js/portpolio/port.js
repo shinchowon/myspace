@@ -156,6 +156,8 @@ $(document).ready(function($){
 	};
 
 	window.fncSlider = fncSlider;
+	
+	
 	}());
 
 
@@ -198,6 +200,5 @@ $(document).ready(function($){
 	        },
 	    ],
 	});
-	
-	
+		
 });
