@@ -3,25 +3,45 @@
 body {background-color:#000;}
 
 /**************************PROFILE*****************************/
-.gateContainer { background: #141414; bottom: 0; left: 0; position: fixed; right: 0;  text-align: center; top: 0; z-index: 0;}
-    .gateContainer .centeredDiv { align-items: center; bottom: 0; display: flex; flex-direction: column; justify-content: center; left: 0; position: absolute; right: 0; top: 0; z-index: 100;}
-    .gateContainer .listProfiles { max-width: 80%;}
-    .gateContainer .chooseProfile { margin: 2em 0;}
+.gateContainer { background: #141414; text-align: center; z-index: 0; padding-top:150px;}
+    .gateContainer .centeredDiv { width:80%; margin: 0 auto;}
+    .gateContainer .listProfiles { width: 100%;}
+    .gateContainer .chooseProfile { margin: 2em 0; font-size:0;}
     .gateContainer ul { padding: 0;}
-    .gateContainer li.profile { max-width: 200px; min-width: 84px; width: 10vw;}
+    .gateContainer li.profile { /* max-width: 200px; min-width: 84px; */ width: 10vw;}
     .gateContainer li { display: inline-block; position: relative; vertical-align: top;}
     .gateContainer li.profile:not(:last-child) {margin: 0 2vw 0 0;}
     .gateContainer .avatarWapper { position: relative;}
     .gateContainer .profileName { color: gray;  display: block; font-size: 1.3vw; line-height: 1.2em;  margin: 0.6em 0; min-height: 1.8em;  overflow: hidden;  text-align: center; text-overflow: ellipsis;}
-    .gateContainer .profileIcon {  background-color: #333;  background-repeat: no-repeat;  background-size: cover;  border: none;  border-radius: 4px;  box-sizing: border-box;  height: 10vw;  max-height: 200px;  max-width: 200px;  min-height: 84px;  min-width: 84px;  position: relative;  text-decoration: none;  width: 10vw;}
+    .gateContainer .profileIcon {  background-color: #333;  background-repeat: no-repeat;  background-size: cover;  border: none;  border-radius: 4px;  box-sizing: border-box;  height: 10vw; position: relative;  text-decoration: none;  width: 10vw;}
     .gateContainer .profileIcon:after {  border: 0.3em solid transparent; border-radius: 4px; bottom: 0; content: ""; display: block; left: 0; position: absolute; right: 0; top: 0;}
 
 
-.profile.profileSel{
-    transform: translate(-0.2rem, 1rem) rotate(10deg);
-    animation: flicker 2s ease-in-out infinite alternate
-}
+.profile.profileSel{ transform: translate(-0.2rem, 1rem) rotate(10deg);  animation: flicker 2s ease-in-out infinite alternate}
 .profile.profileSel .profileName {color: #fff; text-shadow: 0 0 21px rgba(223, 15, 15, 0.9)}
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+.titleText { color: #cce7f8; font-size: 4.5rem; font-family: "Pacifico", cursive; text-transform: uppercase; height: 145px; animation: shining 0.1s alternate infinite; transform: rotateX(45deg);}
+
+
+@media all and (min-width: 1200px){
+	.gateContainer { padding-top: 30%; }
+	.titleText { font-size: 6.5rem; line-height: 10.5rem; height: 316px;}
+  	.gateContainer ul { width:100%}
+	.gateContainer .listProfiles {max-width: 100%;}
+	.gateContainer li.profile {width: 30%;}
+  	.gateContainer .profileIcon {width: 100%; height:24vw;}
+  	.gateContainer .profileName {width: 100%;font-weight: bold; font-size: 3.3vw;}
+}
+@media all and (min-width: 620px){
+	.gateContainer { padding-top: 20%; }
+	.titleText { font-size: 9.5rem; line-height: 10.5rem; height: 400px;}
+  	.gateContainer ul { width:100%}
+	.gateContainer .listProfiles {max-width: 100%;}
+	.gateContainer li.profile {width: 47%;}
+  	.gateContainer .profileIcon {width: 100%; height:38vw;}
+  	.gateContainer .profileName {width: 100%;font-weight: bold; font-size: 6.3vw;}
+}
+
 
 @keyframes flicker{
     0%{ transform: translate(-0.2rem, 1rem) rotate(10deg)}
@@ -35,12 +55,11 @@ body {background-color:#000;}
     100%{transform: translate(-0.2rem, 1rem) rotate(10deg)}
 }
 
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
-.titleText { color: #cce7f8; font-size: 4.5rem; font-family: "Pacifico", cursive; text-transform: uppercase; height: 145px; animation: shining 0.1s alternate infinite; transform: rotateX(45deg);}
 @keyframes shining {
   from {text-shadow: 0 0 6px rgba(211, 196, 182, 0.9), 0 0 30px rgba(211, 196, 182, 0.3), 0 0 12px rgba(223, 15, 15, 0.5), 0 0 21px rgba(223, 15, 15, 0.9), 0 0 34px rgba(223, 15, 15, 0.8), 0 0 54px rgba(223, 15, 15, 0.9);}
   to {text-shadow: 0 0 6px #d3bfb6, 0 0 30px rgba(211, 196, 182, 0.4), 0 0 12px rgba(223, 15, 15, 0.6), 0 0 22px rgba(223, 15, 15, 0.8), 0 0 38px rgba(223, 15, 15, 0.9), 0 0 60px #df0f0f;}
 }
+
 
 
 

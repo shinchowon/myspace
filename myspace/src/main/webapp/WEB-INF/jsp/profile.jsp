@@ -16,8 +16,8 @@
 <body>
 <div class="gateContainer" >
     <div class="centeredDiv">
+        <div class="titleText">CWEND PORTFOLIO </div>
         <div class="listProfiles">
-            <div class="titleText">CWEND PORTFOLIO </div>
             <ul class="chooseProfile">
                 <li class="profile">
                 	<a class="profileLink" href="<c:url value='port/portMain.do'/>">

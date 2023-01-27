@@ -192,13 +192,13 @@ $(document).ready(function($){
 	          }
 	        },
 	        {
-	          breakpoint: 770,
-	          settings: {
-	            centerPadding:'0',
-	            arrows:false,
-	          }
-	        },
-	    ],
+		       breakpoint:700,
+		       settings: {  
+		    	 centerPadding:'10px',
+		         slidesToShow: 1
+		       }
+		    }
+	    ]
 	});
 		
 });
