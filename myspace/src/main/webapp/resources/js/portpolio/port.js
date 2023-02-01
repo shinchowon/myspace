@@ -1,5 +1,6 @@
-$(document).ready(function($){
 
+$(document).ready(function($){
+	
 (function() {
 	var $$ = function(selector, context) {
 	  var context = context || document;
@@ -166,10 +167,20 @@ $(document).ready(function($){
 	var $demoCont = document.querySelector(".demo-cont");
 
 	[].slice.call(document.querySelectorAll(".fnc-slide__action-btn")).forEach(function($btn) {
-	$btn.addEventListener("click", function() {
-	  $demoCont.classList.toggle("credits-active");
+		$btn.addEventListener("click", function() {
+		  $demoCont.classList.toggle("credits-active");
+		});
 	});
+	
+	$('.move1').click(function(){
+		var location = document.querySelector(".secSlide").offsetTop;
+	    window.scrollTo({top: location - 0, behavior: 'smooth'});
 	});
+	$('.move2').click(function(){
+		var location = document.querySelector(".secContact").offsetTop;
+    	window.scrollTo({top: location - 0, behavior: 'smooth'});
+	});
+	
 	
 	// portpolio List letter 
 	$(".sec2Tit").lettering('words').children("span").lettering();
@@ -195,10 +206,11 @@ $(document).ready(function($){
 		       breakpoint:700,
 		       settings: {  
 		    	 centerPadding:'10px',
+		    	 autoplay: true,
+				 autoplaySpeed: 3000, 
 		         slidesToShow: 1
 		       }
 		    }
 	    ]
-	});
-		
+	});	
 });

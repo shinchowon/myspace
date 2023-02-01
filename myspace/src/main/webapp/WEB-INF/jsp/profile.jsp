@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google" value="notranslate"/>
 <%@ include file="/WEB-INF/jsp/include/includecss.jsp"%>
 <%@ include file="/WEB-INF/jsp/include/includejs.jsp"%>
@@ -40,7 +41,7 @@
                     <div class="profile-children"></div>
                 </li>
                 <li class="profile">
-                    <a class="profileLink" href="">
+                    <a class="profileLink2" href="<%--<c:url value='login/loginform.do--%>">
                     	<div class="avatarWapper">
                         	<div class="profileIcon" style="background-image:url(<c:url value="/resources/img/profile/profile3.png" />);">
                         	</div>
@@ -53,6 +54,11 @@
         </div>
     </div>
 </div>
+<script>
+	$(".profileLink2").click(function(){		
+		alertMsg("alert","준비중입니다.");
+	});
+</script>
 </body>
 </html>
 

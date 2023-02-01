@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google" value="notranslate"/>
 <title>portMain</title>
@@ -16,13 +16,46 @@
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/portpolio/port.css"/>"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <script src="<c:url value="/resources/js/portpolio/slick.js" />"></script>
 <script src="<c:url value="/resources/js/portpolio/slick.min.js" />"></script>
 <script src="<c:url value="/resources/js/portpolio/lettering.min.js" />"></script>
+<script src="<c:url value="/resources/js/portpolio/jquery.jcarousel.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/portpolio/port.js" />"></script>
+
 </head>
 </body>
+
+<div class ="mpContent" id="content-wrap">
+          <div class="jcarousel">
+           <ul id="songs">
+           </ul>
+          </div>
+          <audio>
+             <source src="" type="audio/mpeg">
+           </audio>
+          <div id="controls">
+           <span id="previous-btn"><span class="material-symbols-sharp">skip_previous</span></span>
+           <span id="play-btn"><span class="material-symbols-sharp">play_arrow</span></span>
+           <span id="next-btn"><span class="material-symbols-sharp">skip_next</span></span>
+          </div>
+          <div id="sub-controls">
+           <i class="random" aria-hidden="true"> <span class="material-symbols-sharp">shuffle</span></i>
+           <i class="refresh" aria-hidden="true"><span class="material-symbols-sharp">repeat </span></i>
+          </div>
+          <div id="timeline">
+           <span id="current-time">--:--</span>
+           <span id="total-time">--:--</span>
+           <div class="slider" data-direction="horizontal">
+             <div class="progress">
+               <div class="pin" id="progress-pin" data-method="rewind"></div>
+             </div>
+           </div>
+          </div>
+        </div>
+
+
 <div class="demo-cont">
     <!-- slider start -->
     <div class="fnc-slider example-slider">
@@ -39,7 +72,7 @@
                   <span>portpolio</span>
                 </div>
               </h2>
-              <button type="button" class="fnc-slide__action-btn">
+              <button type="button" class="fnc-slide__action-btn move1">
                 Move
                 <span data-text="Move">Move</span>
               </button>
@@ -59,7 +92,7 @@
                   <span>Contact</span>
                 </div>
               </h2>
-              <button type="button" class="fnc-slide__action-btn">
+              <button type="button" class="fnc-slide__action-btn move2">
                 Move
                 <span data-text="Move">Move</span>
               </button>
@@ -214,6 +247,8 @@
 	  
 	  </div>
   </section>
+  
+  <script src="<c:url value="/resources/js/portpolio/bgm.js" />"></script>
 </body>
 </html>
 

@@ -3,7 +3,7 @@
 body {background-color:#000;}
 
 /**************************PROFILE*****************************/
-.gateContainer { background: #141414; text-align: center; z-index: 0; padding-top:150px;}
+.gateContainer { text-align: center; z-index: 0; padding-top:150px;}
     .gateContainer .centeredDiv { width:80%; margin: 0 auto;}
     .gateContainer .listProfiles { width: 100%;}
     .gateContainer .chooseProfile { margin: 2em 0; font-size:0;}
@@ -23,7 +23,7 @@ body {background-color:#000;}
 .titleText { color: #cce7f8; font-size: 4.5rem; font-family: "Pacifico", cursive; text-transform: uppercase; height: 145px; animation: shining 0.1s alternate infinite; transform: rotateX(45deg);}
 
 
-@media all and (min-width: 1200px){
+@media @media (max-width:1200px){
 	.gateContainer { padding-top: 30%; }
 	.titleText { font-size: 6.5rem; line-height: 10.5rem; height: 316px;}
   	.gateContainer ul { width:100%}
@@ -32,13 +32,13 @@ body {background-color:#000;}
   	.gateContainer .profileIcon {width: 100%; height:24vw;}
   	.gateContainer .profileName {width: 100%;font-weight: bold; font-size: 3.3vw;}
 }
-@media all and (min-width: 620px){
+@media (max-width:620px){
 	.gateContainer { padding-top: 20%; }
-	.titleText { font-size: 9.5rem; line-height: 10.5rem; height: 400px;}
+	.titleText {font-size: 3.5rem; line-height: 5.5rem; height: 200px;}
   	.gateContainer ul { width:100%}
 	.gateContainer .listProfiles {max-width: 100%;}
-	.gateContainer li.profile {width: 47%;}
-  	.gateContainer .profileIcon {width: 100%; height:38vw;}
+	.gateContainer li.profile {width: 40%;}
+  	.gateContainer .profileIcon {width: 100%; height:30vw;}
   	.gateContainer .profileName {width: 100%;font-weight: bold; font-size: 6.3vw;}
 }
 
