@@ -32,10 +32,15 @@ public class LoginController {
 		User users = service.login(user);
 		System.out.println("////////////////////////////////");
 		System.out.println(users);
+		System.out.println(users.getName());
+		System.out.println(users.getAuth());
 		System.out.println("////////////////////////////////");
 		if(users == null) {
 			return "redirect:/main.do";
 		}
+		
+		//else if(users.getAuth() == "99") {
+		//}
 		//session.setAttribute("users", users);
 		return "s";
 	}

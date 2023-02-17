@@ -179,7 +179,7 @@ body {  margin: 0;}
 .secSlide .slideBox .slider-item .prjBox {  position: absolute; bottom: 2em; left: 2em; right: 2em;}
 .secSlide .slideBox .slider-item .prjDate { font-weight: 100;  margin-bottom: 1.5em;  transition-delay: 60ms; font-size: 1.2rem;}
 .secSlide .slideBox .slider-item .prjTit { font-size: 1.1em;  line-height: 1.2em;  word-break: keep-all;}
-.secSlide .slideBox .slider-item .prjView {  display: inline-block; background: #fff; padding: 0.5em 1.25em; font-size: 1.33em; width: 100%; opacity: 0; position: absolute; left: 0; bottom: -2em; pointer-events: none; transition-delay: 25ms;}
+.secSlide .slideBox .slider-item .prjView {  display: inline-block; background: #fff; color:#666; padding: 0.5em 1.25em; font-size: 1.33em; width: 100%; opacity: 0; position: absolute; left: 0; bottom: -2em; pointer-events: none; transition-delay: 25ms;}
 .secSlide .slideBox .slider-item .prjDate, .secSlide .slideBox .slider-item .prjTit { position: relative; bottom: 0;  cursor: default;}
 
 .secSlide .slideBox .slider-item .prjNum, .secSlide .slideBox .slider-item .prjNum:before, .secSlide .slideBox .slider-item .prjNum:after {vertical-align: middle;}
@@ -201,6 +201,22 @@ body {  margin: 0;}
 .slideDim {opacity: 0; position: absolute; z-index: 100; top: 0; left: 0;}
 .secSlide .slideBox .slider-item:hover .slideDim{content: "";  display: block;  background: linear-gradient(180deg, rgba(73, 73, 73, 0) 0%, rgba(15, 15, 15, 0.7) 100%);  opacity: 1; position: absolute;  top: 0; left: 0; right: 0; bottom: 0;}
   
+
+/**************modal*/
+
+.modal-active, .modal-active { overflow: hidden;}
+
+#modal-container { position: fixed; display: table; height: 100%; width: 100%; top: 0; left: 0; transform: scale(0); z-index: 30000;}
+#modal-container.one { transform: scaleY(0.01) scaleX(0); animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+#modal-container.one .modal-background .modal { transform: scale(0); animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+#modal-container.one.out { transform: scale(1); animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+#modal-container.one.out .modal-background .modal { animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+#modal-container .modal-background { display: table-cell; background: rgba(0, 0, 0, 0.8); text-align: center; vertical-align: middle;}
+#modal-container .modal-background .modal { background: white; padding: 50px; display: inline-block; border-radius: 3px; font-weight: 300; position: relative; width:75%; height:61vh;}
+#modal-container .modal-background .modal h2 {font-size: 25px; line-height: 25px; margin-bottom: 15px;}
+#modal-container .modal-background .modal p { font-size: 18px; line-height: 22px;}
+#modal-container .modal-background .modal .modal-svg { position: absolute; top: 0;  left: 0; height: 100%; width: 100%; border-radius: 3px;}
+#modal-container .modal-background .modal .modal-svg rect { stroke: #fff; stroke-width: 2px; stroke-dasharray: 778; stroke-dashoffset: 778;}
 
 /**************contact*/
 
@@ -287,6 +303,10 @@ form.gform fieldset textarea {width: 100%;}
 }
 @keyframes animate { 0%{transform:translateY(10px);} 100%{transform:translateY(-10px);}}
 @keyframes textColor { 0% { color: #7e0fff;} 50% { color: #0fffc1;}  100% {color: #7e0fff;}}
+@keyframes unfoldIn {0% { transform: scaleY(0.005) scaleX(0);} 50% { transform: scaleY(0.005) scaleX(1);} 100% { transform: scaleY(1) scaleX(1);}}
+@keyframes unfoldOut { 0% { transform: scaleY(1) scaleX(1);} 50% {transform: scaleY(0.005) scaleX(1);} 100% { transform: scaleY(0.005) scaleX(0);}}
+@keyframes zoomIn { 0% {transform: scale(0);} 100% {transform: scale(1);}}
+@keyframes zoomOut { 0% {transform: scale(1);} 100% {transform: scale(0);}}
 
 
 

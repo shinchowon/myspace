@@ -4,7 +4,7 @@
 
 	<select id = "login" parameterType="User" resultType="User">
 		select * from user_tb
-		where id = #{name}
+		where id = #{id}
 		and pass = #{pass}
 	</select>
 

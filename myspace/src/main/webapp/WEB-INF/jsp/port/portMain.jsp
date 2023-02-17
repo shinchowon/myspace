@@ -121,6 +121,17 @@
     <!-- slider end -->
   </div>
   <section class="sec secSlide">
+    <div id="modal-container">
+	  <div class="modal-background">
+	    <div class="modal">
+	      <h2>제목</h2>
+	      <p>준비중입니다.</p>
+	      <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			</svg>
+	    </div>
+	  </div>
+	</div>
     <div class="slideLfBox">
     	<span class="sec2Tit">project</span>
     	<span class="sec2Tit2">list</span>
@@ -135,10 +146,9 @@
           <div class="prjBox">
             <div class="prjDate prjDate2">2022.04 ~ 2022.07</div>
             <div class="prjTit">한국투자증권 / 토스 연계 발행어음</div>
-              <a href="" target="_blank">
-                  <div class="prjView">More View</div>
-              </a>
+               <div id="one" class="prjView button">More View</div>
           </div>
+          
         </div>
         <div class="slider-item">  
             <div class="slideDim"></div>
@@ -248,7 +258,7 @@
 	  </div>
   </section>
   
-  <script src="<c:url value="/resources/js/portpolio/bgm.js" />"></script>
+  <script src="<c:url value="/resources/js/portpolio/bgm.js" />"></script>  
 </body>
 </html>
 

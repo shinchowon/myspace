@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google" value="notranslate"/>
 <title>Login</title>
 <%@ include file="/WEB-INF/jsp/include/includecss.jsp"%>
@@ -17,8 +18,8 @@
         <h2>Login</h2>
         <form id="loginData">
           <div class="user-box">
-            <input type="text" name="user" required />
-            <label>Username</label>
+            <input type="text" name="id" required />
+            <label>UserId</label>
           </div>
           <div class="user-box">
             <input type="password" name="pass" autocomplete="off" required />
@@ -36,8 +37,8 @@
       </div>
      <script>
         $(".submit").click(function(){
-            if($("input[name=user]").val() == ""){
-                alertMsg($("input[name=user]").val(), "Username 없음");
+            if($("input[name=id]").val() == ""){
+                alertMsg($("input[name=id]").val(), "UserId 없음");
             }else if($("input[name=pass]").val() == ""){
                 alertMsg($("input[name=pass]").val(), "Password 없음");
             }else {
@@ -45,7 +46,7 @@
             	$.ajax({ 
         			url : 'login.do',
         			type: "POST",
-        	    	data : {name:$("input[name=user]").val(), pass:$("input[name=pass]").val()},
+        	    	data : {id:$("input[name=id]").val(), pass:$("input[name=pass]").val()},
         	    	//dataType : "json",
         	    	success:function(result) {
         				console.log(result);

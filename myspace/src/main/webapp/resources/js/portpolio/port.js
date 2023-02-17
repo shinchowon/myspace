@@ -212,5 +212,17 @@ $(document).ready(function($){
 		       }
 		    }
 	    ]
-	});	
+	});
+	
+	// project modal
+	 $('.button').click(function(){
+   	  var buttonId = $(this).attr('id');
+   	  $('#modal-container').removeAttr('class').addClass(buttonId);
+   	  $('.secSlide').addClass('modal-active');
+   	})
+
+   	$('#modal-container').click(function(){
+   	  $(this).addClass('out');
+   	  $('.secSlide').removeClass('modal-active');
+   	});
 });
