@@ -54,8 +54,10 @@
         	    			alertMsg("alert","EMAIL또는 PASS를 확인해주세요.");
         				 }
         				else {
-        					alert("로그인되었습니다.");
-        					//location.href="/petmee/main.do"
+        					alertMsg("로그인되었습니다.");
+        					if(result == "admin"){
+        						location.href="/myspacecw/admin/adminMain.do"
+        					}
         				}
         			},error : function (jqXHR, textStatus, errorThrown){
                     	console.log(jqXHR);  //응답 메시지

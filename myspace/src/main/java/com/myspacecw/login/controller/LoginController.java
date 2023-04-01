@@ -30,19 +30,20 @@ public class LoginController {
 	@ResponseBody 
 	 public String login(User user, HttpSession session) {
 		User users = service.login(user);
-		System.out.println("////////////////////////////////");
+		System.out.println("/////////////////1///////////////");
 		System.out.println(users);
 		System.out.println(users.getName());
 		System.out.println(users.getAuth());
-		System.out.println("////////////////////////////////");
+		System.out.println("////////////////2////////////////");
 		if(users == null) {
 			return "redirect:/main.do";
+		}if(users.getAuth().equals("99")) {
+			System.out.println("////관리자");
+			return "admin";
+		}else {			
+			return "s";			
 		}
-		
-		//else if(users.getAuth() == "99") {
-		//}
 		//session.setAttribute("users", users);
-		return "s";
 	}
 
 
